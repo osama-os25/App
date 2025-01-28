@@ -1,3 +1,35 @@
+/* تنسيق عام للموقع */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+/* قسم المعلومات */
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
 /* قسم الصور */
 .images {
     width: 100%;
@@ -9,16 +41,29 @@
 
 .image-slider {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     gap: 1rem;
     max-width: 80%;
+    padding: 1rem;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.image-slider::-webkit-scrollbar {
+    display: none;
 }
 
 .image-slider img {
-    max-width: 200px; /* لتحديد حجم الصور بشكل متناسق */
+    max-width: 200px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-slider img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* زر التحميل */
@@ -32,17 +77,19 @@
 
 .download-btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: #4CAF50;
+    padding: 1rem 2rem;
+    background: #4caf50;
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 50px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
 }
 
 .download-btn:hover {
     background: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
